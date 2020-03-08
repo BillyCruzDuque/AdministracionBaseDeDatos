@@ -1,0 +1,80 @@
+/*
+
+    Otorgando los privilegios en la BD al grupo Administración en el SQL.
+
+*/
+
+-- Todos los privilegios para las tablas del sistema administrativo
+GRANT ALL ON TABLE Cheque TO
+GROUP admin;
+
+GRANT ALL ON TABLE CuentaCheques TO
+GROUP admin;
+
+GRANT ALL ON TABLE Tabulador TO
+GROUP admin;
+
+GRANT ALL ON TABLE Concepto TO
+GROUP admin;
+
+GRANT ALL ON TABLE Recibo TO
+GROUP admin;
+
+GRANT ALL ON TABLE DetalleRecibo TO
+GROUP admin;
+
+-- Solo puede consultar y actualizar la tabla de profesores a los usuarios del grupo admin.
+GRANT SELECT, UPDATE ON TABLE Profesores TO
+GROUP admin;
+
+-- Solo se permite consultar estas tablas a los usuarios del grupo admin.
+GRANT SELECT ON TABLE CursosExtracurricular TO
+GROUP admin;
+
+GRANT SELECT ON TABLE CEVerano TO
+GROUP admin;
+
+GRANT SELECT ON TABLE CEExtracurricula TO
+GROUP admin;
+
+GRANT SELECT ON TABLE CursosEspeciales TO
+GROUP admin;
+
+
+/*
+
+    Otorgando los privilegios en la BD al grupo Escolar en el SQL.
+
+*/
+
+-- Otorgando privilegios sobre las tablas del sistema escolar.
+GRANT ALL ON TABLE Materias TO
+GROUP escolar;
+
+GRANT ALL ON TABLE CursosExtracurricular TO
+GROUP escolar;
+
+GRANT ALL ON TABLE CEVerano TO
+GROUP escolar;
+
+GRANT ALL ON TABLE CEExtracurricula TO
+GROUP escolar;
+
+GRANT ALL ON TABLE CursosEspeciales TO
+GROUP escolar;
+
+GRANT ALL ON TABLE Alumnos TO
+GROUP escolar;
+
+GRANT ALL ON TABLE Faltas TO
+GROUP escolar;
+
+GRANT ALL ON TABLE Bimestre TO
+GROUP escolar;
+
+GRANT ALL ON TABLE CalendarioEscolar TO
+GROUP escolar;
+
+-- Otorgando permisos sobre la vista de profesores
+GRANT ALL ON TABLE VistaProfesoresEscolar TO
+GROUP escolar;
