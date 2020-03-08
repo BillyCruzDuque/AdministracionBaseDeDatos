@@ -1,0 +1,22 @@
+
+/*
+
+    Resolviendo el problema de la administración de UACME. Se han identificado 
+    dos grupos de usuarios en este sistema: Administración y Escolar.
+
+*/
+
+--creacion de los grupos de usuarios
+create group admin;
+creacion group escolar;
+
+--Creando los usuarios del grupo admin
+create user avila with password 'admin';
+create user cancino with password 'admin';
+
+-- Creando los usuarios del grupo escolar
+create user barroso with password 'escolar' in group escolar;
+create user tirado with password 'escolar' in group escolar;
+create user martinez with password 'escolar' in group escolar;
+create user aquino with password 'escolar' in group escolar;
+create user ramos with password 'escolar' in group escolar;
