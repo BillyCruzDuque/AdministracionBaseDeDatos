@@ -1,0 +1,51 @@
+/*
+
+    Inserción de datos para algunas tablas recién construidas.
+
+*/
+
+insert into cuentacheques values(1,700,'HSBC');
+insert into cuentacheques values(2,9000,'HSBC');
+insert into cuentacheques values(3,60,'HSBC');
+insert into cuentacheques values(4,10,'HSBC');
+insert into cuentacheques values(5,1000,'HSBC');
+insert into cuentacheques values(6,200,'HSBC');
+
+insert into cheque values(1,10,200,'2008-02-01');
+insert into cheque values(2,10,575.20,'2008-02-01');
+insert into cheque values(2,20,20,'2008-02-01');
+insert into cheque values(3,10,600,'2007-02-01');
+insert into cheque values(4,10,800,'2007-02-01');
+insert into cheque values(5,10,100,'2007-02-01');
+insert into cheque values(6,10,300,'2007-02-01');
+
+insert into tabulador values(10,100);
+insert into tabulador values(20,200);
+insert into tabulador values(30,300);
+insert into tabulador values(40,400);
+insert into tabulador values(50,500);
+insert into tabulador values(60,600);
+insert into tabulador values(70,700);
+
+insert into profesores values(1,40,'Roberto','Maestria',15000);
+insert into profesores values(2,70,'Carlos','Doctorado',25000);
+insert into profesores values(3,20,'Luis','Licenciatura',6000);
+insert into profesores values(4,30,'Yunuan','Maestria',12000);
+insert into profesores values(5,10,'Julio','Licenciatura',4500);
+insert into profesores values(6,20,'Samuel','Licenciatura',5500);
+
+insert into cursosespeciales values(1,1,1,20070204,20050204);
+insert into cursosespeciales values(2,2,2,20070204,20050204);
+insert into cursosespeciales values(3,3,3,20070204,20050204);
+insert into cursosespeciales values(4,4,4,20070204,20050204);
+insert into cursosespeciales values(5,5,5,20070204,20050204);
+
+insert into cursosextracurricular values(1,'admin',204);
+insert into cursosextracurricular values(2,'diseño',204);
+insert into cursosextracurricular values(3,'bdd',204);
+insert into cursosextracurricular values(4,'java',204);
+
+insert into materias values(1,'admin bdd',204);
+insert into materias values(2,'redes',204);
+insert into materias values(3,'redes 2',204);
+insert into materias values(4,'admin bdd',204);
