@@ -1,0 +1,24 @@
+/*
+
+    Caso especial de profesores para el grupo Escolar:
+        La forma en que evitaremos que el grupo escolar vea el sueldo del docente 
+        es creando una vista y asignando privilegios por separado.
+
+*/
+
+/*
+
+    Creando la vista, note que no se proyecta el campo sueldo, 
+    por lo tanto se esconde de la mirada de los usuarios del grupo escolar.
+
+*/
+
+CREATE VIEW VistaProfesoresEscolar AS
+SELECT
+    idprofe,
+    idtab,
+    nombre,
+    maximo
+FROM
+    Profesores;
+
