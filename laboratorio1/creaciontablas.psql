@@ -1,0 +1,119 @@
+--creando la base de datos
+CREATE DATABASE uacme;
+
+--creacion de las tablas
+CREATE TABLE cuentacheques (
+    ncuenta int PRIMARY KEY,
+    saldo numeric(7, 2),
+    banco text
+);
+
+CREATE TABLE cheque (
+    ncuenta int,
+    cns int,
+    total numeric(10, 2),
+    fecha date,
+    FOREIGN KEY (ncuenta) REFERENCES cuentacheques,
+    PRIMARY KEY (ncuenta, cns)
+);
+
+CREATE TABLE tabulador (
+    idtab int PRIMARY KEY,
+    importehora text
+);
+
+CREATE TABLE profesores (
+    idprofe int PRIMARY KEY,
+    idtab int,
+    nombre text,
+    maximo text,
+    sueldo float,
+    FOREIGN KEY (idtab) REFERENCES tabulador
+);
+
+CREATE TABLE cursosespeciales (
+    idcurso int PRIMARY KEY,
+    idprofe int,
+    fini text,
+    ffin text,
+    ncuenta int,
+    cns int,
+    FOREIGN KEY (idprofe) REFERENCES profesores,
+    FOREIGN KEY (ncuenta, cns) REFERENCES cheque
+);
+
+CREATE TABLE cursosextracurricular (
+    idextra int PRIMARY KEY,
+    decextra text,
+    nhorascurso int
+);
+
+CREATE TABLE materias (
+    nmat int PRIMARY KEY,
+    des text,
+    horacurso int
+);
+
+CREATE TABLE ceverano (
+    idcurso int PRIMARY KEY,
+    nmat int,
+    FOREIGN KEY (nmat) REFERENCES materias
+);
+
+CREATE TABLE ceextracurricula (
+    idcurso int PRIMARY KEY,
+    idextra int,
+    FOREIGN KEY (idextra) REFERENCES cursosextracurricular
+);
+
+CREATE TABLE alumnos (
+    matricula int PRIMARY KEY,
+    nombre text
+);
+
+CREATE TABLE bimestre (
+    periodo int,
+    matricula int,
+    nmat int,
+    calificacion int,
+    Faltas float,
+    FOREIGN KEY (nmat) REFERENCES materias,
+    FOREIGN KEY (matricula) REFERENCES alumnos,
+    PRIMARY KEY (matricula, periodo)
+);
+
+CREATE TABLE faltas (
+    fecha varchar,
+    matricula int,
+    FOREIGN KEY (matricula) REFERENCES alumnos,
+    PRIMARY KEY (matricula, fecha)
+);
+
+CREATE TABLE concepto (
+    idconcepto int,
+    desconcepto text,
+    PRIMARY KEY (idconcepto)
+);
+
+CREATE TABLE recibo (
+    folio int PRIMARY KEY,
+    matricula int,
+    fecharec text,
+    totalrec float,
+    FOREIGN KEY (matricula) REFERENCES alumnos
+);
+
+CREATE TABLE DetalleRecibo (
+    cns int,
+    idconcepto int,
+    folio int,
+    subtotal float,
+    FOREIGN KEY (idconcepto) REFERENCES Concepto,
+    FOREIGN KEY (folio) REFERENCES Recibo,
+    PRIMARY KEY (folio, cns)
+);
+
+CREATE TABLE CalendarioEscolar (
+    fecha text PRIMARY KEY,
+    motivo text
+);
