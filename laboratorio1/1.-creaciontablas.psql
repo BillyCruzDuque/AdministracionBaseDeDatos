@@ -1,3 +1,12 @@
+
+/*
+
+    Las tablas que en este punto encuentra se crearon aplicando las reglas de conversión 
+    del modelo E-R al relacional y que se enseñaron en la materia de 
+    Diseño de Base de Datos. En caso de alguna duda recurra a los apuntes de esa materia.
+
+*/
+
 --creando la base de datos
 CREATE DATABASE uacme;
 
